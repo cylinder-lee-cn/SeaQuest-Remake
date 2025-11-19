@@ -5,4 +5,8 @@
 
 ![SeaQuest](https://github.com/cylinder-lee-cn/SeaQuest-Remake/blob/main/A26_03.gif?raw=true)
 
+![SeaQuest](https://github.com/cylinder-lee-cn/SeaQuest-Remake/blob/main/s_Seaquest_1.png?raw=true)
+![SeaQuest](https://github.com/cylinder-lee-cn/SeaQuest-Remake/blob/main/s_Seaquest_2.png?raw=true)
+![SeaQuest](https://github.com/cylinder-lee-cn/SeaQuest-Remake/blob/main/s_Seaquest_3.png?raw=true)
+
 ## To Be Continued
