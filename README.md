@@ -12,8 +12,8 @@
 
 ![SeaQuest](https://github.com/cylinder-lee-cn/SeaQuest-Remake/blob/main/s_Seaquest_3.png?raw=true)
 
-![SeaQuest](https://github.com/cylinder-lee-cn/SeaQuest-Remake/blob/main/seaquest1_lrg.gif.png?raw=true)
+![SeaQuest](https://github.com/cylinder-lee-cn/SeaQuest-Remake/blob/main/seaquest1_lrg.gif?raw=true)
 
-![SeaQuest](https://github.com/cylinder-lee-cn/SeaQuest-Remake/blob/main/seaquest2_lrg.gif.png?raw=true)
+![SeaQuest](https://github.com/cylinder-lee-cn/SeaQuest-Remake/blob/main/seaquest2_lrg.gif?raw=true)
 
 ## To Be Continued
