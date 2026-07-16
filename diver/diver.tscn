@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://1rkx27hon56r"]
+
+[ext_resource type="Texture2D" uid="uid://dqtd0yqkkekqk" path="res://pic/diver-m.png" id="1_bqwep"]
+[ext_resource type="Script" uid="uid://cs8r0qjx2byh8" path="res://diver/diver.gd" id="1_tgtyk"]
+[ext_resource type="AudioStream" uid="uid://c1731txdnmutb" path="res://sound/rescueDiver.mp3" id="3_0n5qm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0n5qm"]
+atlas = ExtResource("1_bqwep")
+region = Rect2(0, 0, 68, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jew3a"]
+atlas = ExtResource("1_bqwep")
+region = Rect2(136, 0, 68, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8g3x"]
+atlas = ExtResource("1_bqwep")
+region = Rect2(68, 0, 68, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhwlq"]
+atlas = ExtResource("1_bqwep")
+region = Rect2(340, 0, 68, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tneul"]
+atlas = ExtResource("1_bqwep")
+region = Rect2(272, 0, 68, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88d0t"]
+atlas = ExtResource("1_bqwep")
+region = Rect2(204, 0, 68, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wgtvs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0n5qm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jew3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8g3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhwlq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tneul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88d0t")
+}],
+"loop": 1,
+"name": &"diver-move",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6rf3"]
+size = Vector2(64, 56)
+
+[node name="Diver" type="Area2D" unique_id=1361751452]
+script = ExtResource("1_tgtyk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=223488814]
+sprite_frames = SubResource("SpriteFrames_wgtvs")
+animation = &"diver-move"
+frame_progress = 0.36693877
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1931465646]
+shape = SubResource("RectangleShape2D_h6rf3")
+
+[node name="RescueSound" type="AudioStreamPlayer" parent="." unique_id=2013109259]
+stream = ExtResource("3_0n5qm")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
