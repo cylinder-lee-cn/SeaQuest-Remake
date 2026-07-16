@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://do7cbnx5jbxat"]
+
+[ext_resource type="Script" uid="uid://cumo4nyfopfba" path="res://enemy/enemy_torpedo.gd" id="1_6ll80"]
+[ext_resource type="Texture2D" uid="uid://63icsyyhm1tn" path="res://pic/enemybullet.png" id="2_uhpec"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wgtvs"]
+size = Vector2(46, 16)
+
+[node name="EnemyTorpedo" type="Area2D" unique_id=1823097024 groups=["enemy_projectiles"]]
+script = ExtResource("1_6ll80")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=258354298]
+texture = ExtResource("2_uhpec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1616212371]
+shape = SubResource("RectangleShape2D_wgtvs")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=741707623]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

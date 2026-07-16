@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://jjcwjea1e3m2"]
+
+[ext_resource type="Script" uid="uid://bxmdwq6cqgwtk" path="res://enemy/enemy.gd" id="1_2mvqj"]
+[ext_resource type="Texture2D" uid="uid://caqcb7armw7gd" path="res://pic/enemysub-m.png" id="2_pmsee"]
+[ext_resource type="AudioStream" uid="uid://b0n3x88tbuib3" path="res://sound/destroyShark.mp3" id="2_ppra6"]
+[ext_resource type="Texture2D" uid="uid://cefheaw0j8ffq" path="res://pic/shark-m.png" id="3_1wwld"]
+[ext_resource type="AudioStream" uid="uid://4gnesfdlfou8" path="res://sound/destroyEnemySub.mp3" id="3_p200p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5vj3"]
+atlas = ExtResource("2_pmsee")
+region = Rect2(0, 0, 68, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ffra"]
+atlas = ExtResource("2_pmsee")
+region = Rect2(68, 0, 68, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e355f"]
+atlas = ExtResource("2_pmsee")
+region = Rect2(136, 0, 68, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78jik"]
+atlas = ExtResource("2_pmsee")
+region = Rect2(204, 0, 68, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3pv7"]
+atlas = ExtResource("2_pmsee")
+region = Rect2(272, 0, 68, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoplw"]
+atlas = ExtResource("2_pmsee")
+region = Rect2(340, 0, 68, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yflr"]
+atlas = ExtResource("3_1wwld")
+region = Rect2(0, 0, 68, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gf88j"]
+atlas = ExtResource("3_1wwld")
+region = Rect2(68, 0, 68, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbw0t"]
+atlas = ExtResource("3_1wwld")
+region = Rect2(136, 0, 68, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjonb"]
+atlas = ExtResource("3_1wwld")
+region = Rect2(204, 0, 68, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rovcg"]
+atlas = ExtResource("3_1wwld")
+region = Rect2(272, 0, 68, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2hyd"]
+atlas = ExtResource("3_1wwld")
+region = Rect2(340, 0, 68, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ctxf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5vj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ffra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e355f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78jik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3pv7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xoplw")
+}],
+"loop": 1,
+"name": &"enemysub-move",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yflr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gf88j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbw0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjonb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rovcg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2hyd")
+}],
+"loop": 1,
+"name": &"shark-move",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wgtvs"]
+
+[node name="Enemy" type="Area2D" unique_id=2124567096 groups=["enemies"]]
+script = ExtResource("1_2mvqj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=878011208]
+sprite_frames = SubResource("SpriteFrames_5ctxf")
+animation = &"shark-move"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1078147743]
+shape = SubResource("RectangleShape2D_wgtvs")
+
+[node name="SharkHit" type="AudioStreamPlayer2D" parent="." unique_id=889524632]
+stream = ExtResource("2_ppra6")
+
+[node name="SubHit" type="AudioStreamPlayer2D" parent="." unique_id=944973838]
+stream = ExtResource("3_p200p")
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=1425428196]
+position = Vector2(34, 0)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
