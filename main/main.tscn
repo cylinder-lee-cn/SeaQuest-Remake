@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://ccu7ler3unddo"]
+
+[ext_resource type="Script" uid="uid://btfuwkfj3s7a" path="res://main/main.gd" id="1_3wy1v"]
+[ext_resource type="Texture2D" uid="uid://duo61hbogi57n" path="res://pic/background.png" id="1_53q0u"]
+[ext_resource type="PackedScene" uid="uid://cj8ac1cp3scgt" path="res://player/player.tscn" id="2_pjrb6"]
+[ext_resource type="PackedScene" uid="uid://jjcwjea1e3m2" path="res://enemy/enemy.tscn" id="3_xwkvk"]
+[ext_resource type="Texture2D" uid="uid://b2ryy6m270pks" path="res://pic/oxygenbar.png" id="4_c651c"]
+[ext_resource type="PackedScene" uid="uid://1rkx27hon56r" path="res://diver/diver.tscn" id="5_4dugh"]
+[ext_resource type="Texture2D" uid="uid://bbc6pu1fs2wy3" path="res://pic/oxygenbar-under.png" id="5_kfbq2"]
+[ext_resource type="Texture2D" uid="uid://wg6xqi13wasp" path="res://pic/diver-icon.png" id="8_67ri8"]
+[ext_resource type="Texture2D" uid="uid://pjlht7b16r02" path="res://pic/player-icon.png" id="9_grrlh"]
+[ext_resource type="AudioStream" uid="uid://cag5lc331b5x8" path="res://sound/background.mp3" id="10_0i4oc"]
+[ext_resource type="Texture2D" uid="uid://cji8hkqriw5sw" path="res://pic/surface.png" id="11_bsumw"]
+
+[node name="Main" type="Node2D" unique_id=806860502]
+script = ExtResource("1_3wy1v")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1773649882]
+offset_right = 1276.0
+offset_bottom = 760.0
+texture = ExtResource("1_53q0u")
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." unique_id=1167902063 instance=ExtResource("2_pjrb6")]
+position = Vector2(620, 182)
+
+[node name="Enemy" parent="." unique_id=2124567096 instance=ExtResource("3_xwkvk")]
+position = Vector2(-200, 241)
+
+[node name="Enemy2" parent="." unique_id=700586366 instance=ExtResource("3_xwkvk")]
+position = Vector2(-200, 336)
+
+[node name="Enemy3" parent="." unique_id=2062488347 instance=ExtResource("3_xwkvk")]
+position = Vector2(-200, 431)
+
+[node name="Enemy4" parent="." unique_id=1152737070 instance=ExtResource("3_xwkvk")]
+position = Vector2(-200, 526)
+
+[node name="Diver" parent="." unique_id=1361751452 instance=ExtResource("5_4dugh")]
+position = Vector2(-80, 526)
+
+[node name="Diver2" parent="." unique_id=1734787445 instance=ExtResource("5_4dugh")]
+position = Vector2(-80, 431)
+
+[node name="Diver3" parent="." unique_id=1594155290 instance=ExtResource("5_4dugh")]
+position = Vector2(-80, 336)
+
+[node name="Diver4" parent="." unique_id=827961700 instance=ExtResource("5_4dugh")]
+position = Vector2(-80, 241)
+
+[node name="OxygenBar" type="TextureProgressBar" parent="." unique_id=2129801129]
+unique_name_in_owner = true
+anchors_preset = -1
+offset_left = 388.0
+offset_top = 677.0
+offset_right = 883.0
+offset_bottom = 708.0
+step = 0.1
+texture_under = ExtResource("5_kfbq2")
+texture_progress = ExtResource("4_c651c")
+metadata/_edit_lock_ = true
+
+[node name="DiverIcons" type="HBoxContainer" parent="." unique_id=1241862461]
+unique_name_in_owner = true
+offset_left = 942.0
+offset_top = 676.0
+offset_right = 1202.0
+offset_bottom = 712.0
+metadata/_edit_lock_ = true
+
+[node name="diver-icon1" type="TextureRect" parent="DiverIcons" unique_id=121055059]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_67ri8")
+
+[node name="diver-icon2" type="TextureRect" parent="DiverIcons" unique_id=1429399345]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_67ri8")
+
+[node name="diver-icon3" type="TextureRect" parent="DiverIcons" unique_id=2010364168]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_67ri8")
+
+[node name="diver-icon4" type="TextureRect" parent="DiverIcons" unique_id=1545203312]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_67ri8")
+
+[node name="diver-icon5" type="TextureRect" parent="DiverIcons" unique_id=1655000318]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_67ri8")
+
+[node name="diver-icon6" type="TextureRect" parent="DiverIcons" unique_id=1408022954]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_67ri8")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1852099026]
+unique_name_in_owner = true
+offset_left = 495.99997
+offset_right = 606.0
+offset_bottom = 45.0
+scale = Vector2(2.5, 1.5)
+theme_override_colors/font_color = Color(1, 1, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.69803923, 0.69803923, 0.69803923, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="PlayerIcons" type="HBoxContainer" parent="." unique_id=1767550833]
+unique_name_in_owner = true
+offset_left = 420.0
+offset_top = 60.0
+offset_right = 530.0
+offset_bottom = 100.0
+scale = Vector2(1.5, 1)
+metadata/_edit_lock_ = true
+
+[node name="player-icon1" type="TextureRect" parent="PlayerIcons" unique_id=1021448169]
+layout_mode = 2
+texture = ExtResource("9_grrlh")
+
+[node name="player-icon2" type="TextureRect" parent="PlayerIcons" unique_id=1536441321]
+layout_mode = 2
+texture = ExtResource("9_grrlh")
+
+[node name="GameOverScreen" type="Label" parent="." unique_id=267314595]
+unique_name_in_owner = true
+visible = false
+offset_left = 308.0
+offset_top = 321.0
+offset_right = 538.0
+offset_bottom = 376.0
+scale = Vector2(3, 2)
+theme_override_colors/font_color = Color(0.99215686, 0.26666668, 0.08627451, 1)
+theme_override_colors/font_shadow_color = Color(0.9529412, 0.93333334, 0.2, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "GAME OVER"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="SeaSurface" type="TextureRect" parent="." unique_id=1290647987]
+modulate = Color(1, 1, 1, 0.78431374)
+offset_top = 191.0
+offset_right = 1276.0
+offset_bottom = 231.0
+texture = ExtResource("11_bsumw")
+stretch_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="BGMPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1842289577]
+visible = false
+stream = ExtResource("10_0i4oc")
+volume_db = -5.0
+autoplay = true

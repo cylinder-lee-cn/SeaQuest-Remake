@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://ccu7ler3unddo"]
+
+[ext_resource type="Script" uid="uid://btfuwkfj3s7a" path="res://main/main.gd" id="1_3wy1v"]
+[ext_resource type="Texture2D" uid="uid://duo61hbogi57n" path="res://pic/background.png" id="1_53q0u"]
+[ext_resource type="PackedScene" uid="uid://cj8ac1cp3scgt" path="res://player/player.tscn" id="2_pjrb6"]
+[ext_resource type="PackedScene" uid="uid://jjcwjea1e3m2" path="res://enemy/enemy.tscn" id="3_xwkvk"]
+[ext_resource type="Texture2D" uid="uid://b2ryy6m270pks" path="res://pic/oxygenbar.png" id="4_c651c"]
+[ext_resource type="PackedScene" uid="uid://1rkx27hon56r" path="res://diver/diver.tscn" id="5_4dugh"]
+[ext_resource type="Texture2D" uid="uid://bbc6pu1fs2wy3" path="res://pic/oxygenbar-under.png" id="5_kfbq2"]
+[ext_resource type="Texture2D" uid="uid://wg6xqi13wasp" path="res://pic/diver-icon.png" id="8_67ri8"]
+
+[node name="Main" type="Node2D" unique_id=806860502]
+script = ExtResource("1_3wy1v")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1773649882]
+offset_right = 1276.0
+offset_bottom = 760.0
+texture = ExtResource("1_53q0u")
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." unique_id=1167902063 instance=ExtResource("2_pjrb6")]
+position = Vector2(620, 182)
+
+[node name="Enemy" parent="." unique_id=2124567096 instance=ExtResource("3_xwkvk")]
+position = Vector2(-200, 241)
+
+[node name="Enemy2" parent="." unique_id=700586366 instance=ExtResource("3_xwkvk")]
+position = Vector2(-200, 336)
+
+[node name="Enemy3" parent="." unique_id=2062488347 instance=ExtResource("3_xwkvk")]
+position = Vector2(-200, 431)
+
+[node name="Enemy4" parent="." unique_id=1152737070 instance=ExtResource("3_xwkvk")]
+position = Vector2(-200, 526)
+
+[node name="Diver" parent="." unique_id=1361751452 instance=ExtResource("5_4dugh")]
+position = Vector2(-80, 526)
+
+[node name="Diver2" parent="." unique_id=1734787445 instance=ExtResource("5_4dugh")]
+position = Vector2(-80, 431)
+
+[node name="Diver3" parent="." unique_id=1594155290 instance=ExtResource("5_4dugh")]
+position = Vector2(-80, 336)
+
+[node name="Diver4" parent="." unique_id=827961700 instance=ExtResource("5_4dugh")]
+position = Vector2(-80, 241)
+
+[node name="OxygenBar" type="TextureProgressBar" parent="." unique_id=2129801129]
+offset_left = 360.0
+offset_top = 680.0
+offset_right = 900.0
+offset_bottom = 705.0
+max_value = 30.0
+step = 0.1
+value = 30.0
+texture_under = ExtResource("5_kfbq2")
+texture_progress = ExtResource("4_c651c")
+
+[node name="DiverIcons" type="HBoxContainer" parent="." unique_id=1241862461]
+offset_left = 942.0
+offset_top = 676.0
+offset_right = 1202.0
+offset_bottom = 712.0
+
+[node name="diver-icon1" type="TextureRect" parent="DiverIcons" unique_id=121055059]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_67ri8")
+
+[node name="diver-icon2" type="TextureRect" parent="DiverIcons" unique_id=1429399345]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_67ri8")
+
+[node name="diver-icon3" type="TextureRect" parent="DiverIcons" unique_id=2010364168]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_67ri8")
+
+[node name="diver-icon4" type="TextureRect" parent="DiverIcons" unique_id=1545203312]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_67ri8")
+
+[node name="diver-icon5" type="TextureRect" parent="DiverIcons" unique_id=1655000318]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_67ri8")
+
+[node name="diver-icon6" type="TextureRect" parent="DiverIcons" unique_id=1408022954]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_67ri8")
