@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://cmwchin7ns83q"]
+
+[ext_resource type="Script" uid="uid://l6dphk0ud3nd" path="res://start_menu.gd" id="1_ia0g5"]
+[ext_resource type="Texture2D" uid="uid://d2heyc1plyrpw" path="res://pic/start.png" id="1_jwbto"]
+[ext_resource type="AudioStream" uid="uid://dudb3awqethh8" path="res://sound/fireTorpedo.mp3" id="3_vpdu5"]
+
+[sub_resource type="Animation" id="Animation_ia0g5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeOverlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vpdu5"]
+resource_name = "fade_to_black"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeOverlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v2mkm"]
+_data = {
+&"RESET": SubResource("Animation_ia0g5"),
+&"fade_to_black": SubResource("Animation_vpdu5")
+}
+
+[node name="StartMenu" type="Control" unique_id=1020885056]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ia0g5")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2004556492]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jwbto")
+
+[node name="FadeOverlay" type="ColorRect" parent="." unique_id=1269814642]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1478182126]
+libraries/ = SubResource("AnimationLibrary_v2mkm")
+
+[node name="StartSound" type="AudioStreamPlayer2D" parent="." unique_id=1725292803]
+stream = ExtResource("3_vpdu5")
